@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: uim-eureka
+
+server:
+  port: 80
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    serviceUrl:
+      defaultZone: http://gaozhi.online:${server.port}/eureka/
+
+  # 测试时关闭自我保护机制，保证不可用服务及时踢出
+  server:
+    enable-self-preservation: true
